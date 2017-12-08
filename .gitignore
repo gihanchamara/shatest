@@ -1,0 +1,17 @@
+node_modules
+npm-debug.log
+*.log
+.DS_Store
+temp
+dist
+.idea
+package-lock.json
+.github/
+.vscode/
+predix-scripts/
+public/bower_components
+public/index.html
+public/**/*-styles.html
+public/index-inline.css
+public/**/*.es5.js
+public/**/*.es5.js.map

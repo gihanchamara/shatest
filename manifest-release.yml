@@ -1,0 +1,3 @@
+inherit: manifest.yml
+applications:
+  - name: testsha

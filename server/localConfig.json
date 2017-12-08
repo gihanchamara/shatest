@@ -1,0 +1,9 @@
+{
+  "development": {
+    "note": "Out of the box, the predix-webapp-starter app uses mock data, so these values are not required.  Set these values for connecting to real Predix services.",
+    "uaaURL": "{The UAA URI end point to get auth token }",
+    "base64ClientCredential": "{Get clientID:clientSecret for services then base64 encode and place it here}",
+    "loginBase64ClientCredential": "{Get clientID:clientSecret for app login then base64 encode and place it here}",
+    "appURL": "http://localhost:5000"
+  }
+}

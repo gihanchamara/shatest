@@ -1,0 +1,61 @@
+<!-- import polymer -->
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<!-- import page level css -->
+<link rel="import" href="og-app-styles.html">
+
+<!-- app route -->
+<link rel="import" href="../../bower_components/app-route/app-location.html">
+<link rel="import" href="../../bower_components/app-route/app-route.html">
+<link rel="import" href="../../bower_components/px-app-helpers/px-app-route/px-app-route.html"/>
+<!-- px components -->
+<link rel="import" href="../../bower_components/px-branding-bar/px-branding-bar.html"/>
+<link rel="import" href="../../bower_components/px-app-helpers/px-app-header/px-app-header.html"/>
+<link rel="import" href="../../bower_components/px-app-nav/px-app-nav.html">
+<link rel="import" href="../../bower_components/px-view/px-view.html">
+<link rel="import" href="../../bower_components/px-icon-set/px-icon-set.html">
+<!-- seed app components -->
+<link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+
+<dom-module id="og-app">
+  <template>
+
+    <!-- apply imported seed app style module -->
+    <style include="og-app-styles"></style>
+
+    <div class="viewport">
+      <div class="content-wrapper">
+
+        <main class="u-pt-- u-pr-- u-pl--" role="main">
+          <!-- app-location captures url and assigns _route value -->
+          <app-location
+            id="carbonLocation"
+            route="{{_route}}"
+            use-hash-as-path>
+          </app-location>
+
+          <!-- main /rmd route and view -->
+          <app-route
+            route="[[_route]]"
+            pattern="/dashboard"
+            update-nav-route
+            use-hash-as-path
+            active="{{dashboardActive}}">
+          </app-route>
+          <px-view id="dashboardPxView"
+            active="[[dashboardActive]]"
+            element-href="/elements/views/dashboard/dashboard-view.html"
+            load-async="true">
+          </px-view>
+
+        </main>
+
+      </div>
+    </div>
+
+    <!-- <seed-footer footer-links='[[footerLinks]]'></seed-footer> -->
+    <iron-ajax id="configAjaxEl" url="/config" auto></iron-ajax>
+  </template>
+  <script src="og-app.es5.js">
+  </script>
+</dom-module>

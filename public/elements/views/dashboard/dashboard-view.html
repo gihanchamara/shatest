@@ -1,0 +1,33 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+<script type="text/javascript" src="sha256.js"></script>
+
+<dom-module id="dashboard-view">
+  <style>
+
+  </style>
+  <template>
+    <input type="text" value="{{msg::keyup}}">
+    <br>
+    [[hash]]
+  </template>
+  <script>
+    Polymer({
+      is: 'dashboard-view',
+      properties: {
+        msg : {
+          type:String,
+          observer:"_onMsgChange"
+        },
+        hash:{
+          type:String
+        }
+      },
+      ready: function() {
+
+      },
+      _onMsgChange:function(){
+        this.hash =Sha256.hash(this.msg);
+      }
+    });
+  </script>
+</dom-module>

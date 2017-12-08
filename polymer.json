@@ -1,0 +1,13 @@
+{
+  "entrypoint": "public/index.html",
+  "shell": "public/elements/og-app/og-app.html",
+  "fragments": [
+    "public/elements/views/dashboard/dashboard-view.html"
+  ],
+  "sources": [
+    "public/elements/**/*",
+    "public/index*",
+    "public/app*"
+  ],
+  "extraDependencies": []
+}
